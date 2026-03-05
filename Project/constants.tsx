@@ -215,22 +215,24 @@ export const DOMAINS: Domain[] = [
 // HOME PAGE: RESULTS (Showcase)
 export const HOME_RESULTS: Project[] = [
   {
-    title: "Smart Campus ERP",
-    description: "Comprehensive management system for educational institutions streamlining attendance, grades, and fee collection.",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    title: "HealthTech Analytics",
-    description: "AI-driven platform identifying patient risk factors using historical health data.",
-    tags: ["Python", "ML", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+    title: "Hotel Booking Web",
+    description: "Modern hotel reservation platform with seamless booking experience and real-time availability management.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image: "https://images.unsplash.com/photo-1551882547-640d68272ebf?auto=format&fit=crop&w=800&q=80",
+    link: "https://hotel-booking-web-6cie.vercel.app/"
   },
   {
     title: "E-Commerce Superapp",
     description: "Multi-vendor marketplace with real-time inventory and logistics tracking.",
     tags: ["Next.js", "Supabase", "Stripe"],
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    title: "Urban Bites Cafe",
+    description: "Modern food delivery platform connecting local cafes with customers for seamless ordering experience.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image: "https://ik.imagekit.io/vanh84pci/Urban%20Bites.jpeg",
+    link: "https://urbanbitescafe.vercel.app/"
   }
 ];
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { MessageCircle, Send, CheckCircle, X, Minus, MessageSquare, Bot, AlertCircle } from "lucide-react";
-import VoiceAssistant from "./VoiceAssistant";
 
 /**
  * Custom hook to handle typing effect that can be reset
@@ -46,7 +45,6 @@ const ChatWidget: React.FC = () => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
-  const [voiceEnabled, setVoiceEnabled] = useState(true);
 
   const greetingText = "Hi! 👋 Welcome to Ranbidge Solutions. Drop your details below, and we'll send them directly to our team for a quick response!";
   const animatedGreeting = useChatTypingEffect(greetingText, isOpen && !submitted);
@@ -55,8 +53,11 @@ const ChatWidget: React.FC = () => {
     setMessage(msg);
   };
 
-  const handleVoiceTranscript = (transcript: string) => {
-    setMessage(prev => prev + (prev ? ' ' : '') + transcript);
+  const openChatbot = () => {
+    window.open(
+      "https://chatgpt.com/g/g-69a489876fd4819187a332f593e4342c-ranbidge-assistant",
+      "_self"
+    );
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -157,15 +158,18 @@ const ChatWidget: React.FC = () => {
                 <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-[3px] border-slate-950"></div>
               </div>
               <div>
-                <h4 className="font-bold text-white text-sm leading-tight">Ranbridge</h4>
+                <h4 className="font-bold text-white text-sm leading-tight">Ranbidge</h4>
                 <p className="text-[9px] text-slate-500 uppercase tracking-widest font-black">AI Assistant</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <VoiceAssistant 
-                onTranscript={handleVoiceTranscript}
-                apiKey={process.env.REACT_APP_VOICE_API_KEY}
-              />
+              <button
+                onClick={() => window.open("https://chatgpt.com/g/g-69a489876fd4819187a332f593e4342c-ranbidge-assistant", "_blank")}
+                className="p-2.5 text-slate-500 hover:text-white transition-colors"
+                title="ChatGPT Assistant"
+              >
+                <Bot size={18} />
+              </button>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-1.5 text-slate-500 hover:text-white transition-colors"
